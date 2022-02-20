@@ -15,7 +15,7 @@ async function main() {
   const ICO = await ethers.getContractFactory("icoTokenTTT");
   const ico = await ICO.deploy();
 
-  console.log("Donation address:", ico.address);
+  console.log("ICO address:", ico.address);
 }
 
 main()

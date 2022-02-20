@@ -4,14 +4,6 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-
-contract MyCryptoLions is ERC721 {
-    constructor(string memory name, string memory symbol)
-        ERC721(name, symbol)
-    {}
-}
-
 contract icoTokenTTT is ERC20, Ownable {
 
     mapping (address => bool)  internal whiteList;
@@ -26,15 +18,6 @@ contract icoTokenTTT is ERC20, Ownable {
     uint internal firstPeriodRate         =  42;
     uint internal secondPeriodRate        =  21;
     uint internal thirdPeriodRate         =  8;
-
-    // сейл завершен? || есть в вайтлисте ?
-    modifier onlyWhiteList {
-        require(
-            (block.timestamp > endTimeSale) ||
-            (whiteList[msg.sender] == true)
-            , "Permission denied");
-        _;
-    }
 
     // Сейл сейчас активен?
     modifier isSaleAvailable {

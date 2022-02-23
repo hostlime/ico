@@ -1,7 +1,7 @@
 {
   "name": "ico",
   "version": "1.0.0",
-  "description": "",
+  "description": "Смарт-контракт токена ERC20 (TTT) на Solidity. Операция перевод (transfer) до некоторой даты (окончания ICO) доступна только пользователям из вайтлиста . Вайтлист может пополнять\r только владелец контракта.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,14 +11,20 @@
   "license": "ISC",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.2",
     "@openzeppelin/contracts": "^4.5.0",
     "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.5.4",
-    "hardhat": "^2.8.4"
+    "hardhat": "^2.8.4",
+    "solidity-coverage": "^0.7.20"
   },
   "dependencies": {
     "hardhat-deploy": "^0.10.5"
+  },
+  "directories": {
+    "test": "test"
   }
 }

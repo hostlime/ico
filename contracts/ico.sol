@@ -33,10 +33,6 @@ contract icoTokenTTT is ERC20, Ownable {
         addWhiteList(owner());
     }
 
-    function mint(address _to, uint256 _amount) public onlyOwner {
-        _mint(_to, _amount);
-    }
-
     function addWhiteList(address _user) public onlyOwner {
         whiteList[_user] = true;
     }
@@ -44,7 +40,6 @@ contract icoTokenTTT is ERC20, Ownable {
     function getCostToken() public view returns (uint256) {
         if (block.timestamp <= endFistPeriodSale) return firstPeriodRate;
         if (block.timestamp <= endSecondPeriodSale) return secondPeriodRate;
-        if (block.timestamp <= endTimeSale) return thirdPeriodRate;
         return thirdPeriodRate;
     }
 
